@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.53ce1994-6a8f-5c69-ac94-759081bd9583.Caption" Value="Hide elements: Ticket price" />
+			<Item Name="Caption" Value="Yachts form page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>
