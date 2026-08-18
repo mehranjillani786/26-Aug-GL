@@ -1,0 +1,11 @@
+﻿{
+  "SqlScript": {
+    "UId": "6aae811c-4eaa-93a4-f9de-ad45101ea04d",
+    "Name": "DisableOrgRoleTrigger",
+    "DBEngineType": 0,
+    "InstallType": 0,
+    "ModifiedOnUtc": "\/Date(1786624894000)\/",
+    "BackwardCompatibilityConfirmed": false,
+    "DependsOn": []
+  }
+}
