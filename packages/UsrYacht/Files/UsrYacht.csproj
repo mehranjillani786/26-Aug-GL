@@ -672,6 +672,11 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="GitIntegration">
+			<HintPath>$(RelativePkgFolderPath)/GitIntegration/$(StandalonePackageAssemblyPath)/GitIntegration.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="IntegrationV2">
 			<HintPath>$(RelativePkgFolderPath)/IntegrationV2/$(StandalonePackageAssemblyPath)/IntegrationV2.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
