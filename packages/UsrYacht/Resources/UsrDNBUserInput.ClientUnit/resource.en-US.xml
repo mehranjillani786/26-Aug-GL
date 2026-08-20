@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="User input for DNB" />
+			<Item Name="LocalizableStrings.PageTitle_caption.Value" Value="Enter company name and country code" />
+			<Item Name="LocalizableStrings.SaveButton_caption.Value" Value="OK" />
+			<Item Name="Parameters.a8a462da-0607-a5f1-71ca-f0f1b53bcfb8.Caption" Value="Country code (2 letters, ISO)" />
+			<Item Name="Parameters.c9b97df5-1b38-a8f0-35b4-2ab4c5876275.Caption" Value="Company Name" />
+		</Items>
+	</Group>
+</Resources>

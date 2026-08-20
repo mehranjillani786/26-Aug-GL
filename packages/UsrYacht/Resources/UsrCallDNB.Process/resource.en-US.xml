@@ -2,18 +2,15 @@
 <Resources Culture="en-US">
 	<Group Type="String">
 		<Items>
-			<Item Name="BaseElements.ConditionalSequenceFlow1.Caption" Value="Id exists" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Caption" Value="to yacht" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.Caption" Value="Object" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntityId.DisplayValue" Value="[#Yacht id#]" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.Caption" Value="Object schema" />
-			<Item Name="BaseElements.LinkEntityToProcessUserTask1.Parameters.EntitySchemaId.DisplayValue" Value="Yachts" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Caption" Value="user input page" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Account.Caption" Value="Account" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ActivityPriority.Caption" Value="Priority" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ActivityPriority.DisplayValue" Value="ab96fa02-7fe6-df11-971b-001d60e938c6" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ActivityResult.Caption" Value="Result of activity" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Buttons.Value.1f5650dd-c77b-496e-940c-79020d1f1f78.Caption" Value="OK | SaveButton" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Buttons.Value.f3151f29-b4d0-44f6-ae64-cc2e02f84c4c.Caption" Value="OK | SaveButton" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ClientUnitSchemaUId.Caption" Value="Module" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ClientUnitSchemaUId.DisplayValue" Value="Yacht avg price | UsrYarchAvgPriceMini" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.ClientUnitSchemaUId.DisplayValue" Value="User input for DNB | UsrDNBUserInput" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Contact.Caption" Value="Contact" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.CreateActivity.Caption" Value="Create activity" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.CreateActivity.DisplayValue" Value="false" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.CurrentActivityId.Caption" Value="Task Id" />
@@ -30,6 +27,7 @@
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.IsRunning.Caption" Value="Running" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Module.Caption" Value="Card module" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Module.DisplayValue" Value="[#Lookup.Schema used in workspace (view) .Process page display module.eb89c336-08b9-4951-bffd-3f5abc433174#]" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.OmniChat.Caption" Value="Chat" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.OwnerId.Caption" Value="Owner" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.OwnerId.DisplayValue" Value="[#System variable.Current user contact#]" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.PressedButtonCode.Caption" Value="Code of the button that the user clicked" />
@@ -50,51 +48,45 @@
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Template.Caption" Value="Template" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Template.DisplayValue" Value="[#Lookup.Schema used in workspace (view) .Tabbed page with area on top.21620f25-166f-42f1-8b4d-224a959040a3#]" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Title.Caption" Value="Title" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Title.DisplayValue" Value="Yacht avg price" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Title.Value" Value="Yacht avg price" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Title.DisplayValue" Value="User input for DNB" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Title.Value" Value="User input for DNB" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Url.Caption" Value="Url" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.Url.DisplayValue" Value="&quot;[Module]/[Page]/add&quot;" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UseCardProcessModule.Caption" Value="Use standard page generator" />
 			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UseCardProcessModule.DisplayValue" Value="false" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrAvgPrice.Caption" Value="Average price" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrAvgPrice.DisplayValue" Value="[#Avg Ticket Price Parameter#]" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrSqlText.Caption" Value="SQL text" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrSqlText.DisplayValue" Value="[#Sql Text Parameter#]" />
-			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrTextParameter1.Caption" Value="Text 1" />
-			<Item Name="BaseElements.ReadDataUserTask1.Caption" Value="get drive type" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Aggregate function type" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Columns order" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Number of records" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Function result (Date/Time)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Function result (Decimal)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Function result (Integer)" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
-			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Type of result" />
-			<Item Name="BaseElements.ScriptTask1.Caption" Value="avg price" />
-			<Item Name="BaseElements.TerminateEvent1.Caption" Value="success" />
-			<Item Name="BaseElements.TerminateEvent2.Caption" Value="No drive Type" />
-			<Item Name="Caption" Value="Yacht avg price" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrCompanyName.Caption" Value="Company Name" />
+			<Item Name="BaseElements.PreconfiguredPageUserTask1.Parameters.UsrCountryCode.Caption" Value="Country code (2 letters, ISO)" />
+			<Item Name="BaseElements.SubProcess1.Caption" Value="Add an account from DNB 1" />
+			<Item Name="BaseElements.SubProcess1.Parameters.CompletedIterationsCount.Caption" Value="Number of completed instances" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Address.Caption" Value="Address" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Address.DisplayValue" Value="[#DNB 1.Companies:Address#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Caption" Value="Input record collection" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Code.Caption" Value="Code" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Code.DisplayValue" Value="[#DNB 1.Companies:RegistrationNumber#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.DisplayValue" Value="[#DNB 1.Companies#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Name.Caption" Value="Name" />
+			<Item Name="BaseElements.SubProcess1.Parameters.InputRecordCollection.Name.DisplayValue" Value="[#DNB 1.Companies:CompanyName#]" />
+			<Item Name="BaseElements.SubProcess1.Parameters.OutputRecordCollection.Caption" Value="Output record collection" />
+			<Item Name="BaseElements.SubProcess1.Parameters.TerminatedIterationsCount.Caption" Value="Number of terminated instances" />
+			<Item Name="BaseElements.SubProcess1.Parameters.TotalIterationsCount.Caption" Value="Total number of instances" />
+			<Item Name="BaseElements.WebService1.Caption" Value="DNB 1" />
+			<Item Name="BaseElements.WebService1.Parameters.RequestBody.Caption" Value="Request body" />
+			<Item Name="BaseElements.WebService1.Parameters.Response.Caption" Value="Response body" />
+			<Item Name="BaseElements.WebService1.Parameters.StatusCode.Caption" Value="Http status code" />
+			<Item Name="BaseElements.WebService1.Parameters.Success.Caption" Value="Success" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCCode_In.Caption" Value="CountryCode" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCCode_In.DisplayValue" Value="[#user input page.Country code (2 letters, ISO)#]" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCompanies_Out.Caption" Value="Companies" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCompanies_Out.UsrCAddress_Out.Caption" Value="Address" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCompanies_Out.UsrCCName_Out.Caption" Value="CompanyName" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrCompanies_Out.UsrCRNumber_Out.Caption" Value="RegistrationNumber" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrPName_In.Caption" Value="PrimaryName" />
+			<Item Name="BaseElements.WebService1.Parameters.UsrPName_In.DisplayValue" Value="[#user input page.Company Name#]" />
+			<Item Name="Caption" Value="call dnb" />
 			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
 			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />
 			<Item Name="NotificationCaption.Caption" Value="Process instance caption" />
 			<Item Name="NotificationCaption.DisplayValue" Value="[#Process name#]" />
-			<Item Name="Parameters.AvgTicketPriceParameter.Caption" Value="Avg Ticket Price Parameter" />
-			<Item Name="Parameters.DriveTypeIdParameter.Caption" Value="Drive Type Id" />
-			<Item Name="Parameters.DriveTypeIdParameter.DisplayValue" Value="[#get drive type.First item of resulting collection.Drive type#]" />
-			<Item Name="Parameters.SqlTextParameter.Caption" Value="Sql Text Parameter" />
-			<Item Name="Parameters.YachtId.Caption" Value="Yacht id" />
 		</Items>
 	</Group>
 </Resources>

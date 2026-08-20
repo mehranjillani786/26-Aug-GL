@@ -1,4 +1,4 @@
-define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/()/**SCHEMA_ARGS*/ {
+define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
@@ -98,6 +98,21 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				"parentName": "Button_actions",
 				"propertyName": "menuItems",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItem_YachtService",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_YachtService_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "usr.RunWebServiceRequest"
+					}
+				},
+				"parentName": "Button_actions",
+				"propertyName": "menuItems",
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -807,10 +822,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"path": "PDS.UsrLength"
 						},
 						"validators": {
-							"MyMaxGenericValidator": {
-								"type": "usr.MaxValueValidator",
+							"RangeValidator": {
+								"type": "usr.RangeValidator",
 								"params": {
-									"maxValue": 5000,
+									"operator": "<",
+									"value": 5000,
 									"message": "#ResourceString(LengthCannotBeGreater)#"
 								}
 							}
@@ -821,17 +837,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"path": "PDS.UsrPrice"
 						},
 						"validators": {
-							"MySuperValidator": {
-								"type": "usr.DGValidator",
+							"RangeValidator": {
+								"type": "usr.RangeValidator",
 								"params": {
-									"minValue": 50,
-									"message": "#ResourceString(PriceCannotBeLess)#"
-								}
-							},
-							"MyMaxGenericValidator": {
-								"type": "usr.MaxValueValidator",
-								"params": {
-									"maxValue": 100000,
+									"operator": "<",
+									"value": 100000,
 									"message": "#ResourceString(PriceCannotBeGreater)#"
 								}
 							}
@@ -860,10 +870,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"path": "PDS.UsrCrewCount"
 						},
 						"validators": {
-							"MySuperValidator": {
-								"type": "usr.DGValidator",
+							"RangeValidator": {
+								"type": "usr.RangeValidator",
 								"params": {
-									"minValue": 3,
+									"operator": ">",
+									"value": 3,
 									"message": "#ResourceString(CrewCountCannotBeLess)#"
 								}
 							}
@@ -1075,98 +1086,196 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
 		handlers: /**SCHEMA_HANDLERS*/[
 			{
-			    request: "usr.PushButtonRequest",
-			    /* Implementation of the custom query handler. */
-			    handler: async (request, next) => {
-			        console.log("Button works...");
-			        Terrasoft.showInformation("My button was pressed.");
-			
-			        var price = await request.$context.PDS_UsrPrice_ugqei2u;
-			        console.log("Price = " + price);
-			
-			        request.$context.PDS_UsrComment_xicjpdd = "comment from JS code";
-			
-			        /* Call the next handler if it exists and return its result. */
-			        return next?.handle(request);
-			    }
+				request: "usr.PushButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Button works...");
+					Terrasoft.showInformation("My button was pressed.");
+
+					var price = await request.$context.PDS_UsrPrice_ugqei2u;
+					console.log("Price = " + price);
+
+					request.$context.PDS_UsrComment_xicjpdd = "comment from JS code";
+
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
 			},
 			{
 				request: "crt.HandleViewModelAttributeChangeRequest",
 				handler: async (request, next) => {
-					if(["PDS_UsrPrice_ugqei2u", "PDS_UsrPassengerCount_jj4ft5p"].includes(request.attributeName)){
+					if (["PDS_UsrPrice_ugqei2u", "PDS_UsrPassengerCount_jj4ft5p"].includes(request.attributeName)) {
 						let price = await request.$context.PDS_UsrPrice_ugqei2u;
 						let passenger = await request.$context.PDS_UsrPassengerCount_jj4ft5p;
-						let ticket_price = price/passenger;
+						let ticket_price = price / passenger;
 						console.log(ticket_price);
 						request.$context.PDS_UsrTicketPrice_6zhkff7 = ticket_price;
 					}
-					 /* Call the next handler if it exists and return its result. */
-			        return next?.handle(request);
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			},
+			{
+				request: "usr.RunWebServiceRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run web service button works...");
+
+					// get id from drive type lookup type object
+					var typeObject = await request.$context.PDS_UsrDriveType_odxbabp;
+					var driveTypeId = "";
+					if (typeObject) {
+						driveTypeId = typeObject.value;
+					}
+					/* Create an instance of the HTTP client from @creatio-devkit/common. */
+					const httpClientService = new sdk.HttpClientService();
+					/* Specify the URL to run web service method. */
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "YachtService";
+					const methodName = "GetMaxPriceByDriveTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+
+					//const endpoint = "http://mehran-pc:40003/0/rest/YachtService/GetMaxPriceByDriveTypeId";
+					/* Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically. */
+					var params = {
+						driveTypeId: driveTypeId
+					};
+					const response = await httpClientService.post(endpoint, params);
+
+					console.log("response max price = " + response.body.GetMaxPriceByDriveTypeIdResult);
+
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
 				}
 			}
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{
 			"usr.DGValidator": {
-			        validator: function (config) {
-			            return function (control) {
-			                let value = control.value;
-			                let minValue = config.minValue;
-			                let valueIsCorrect = value >= minValue;
-			                var result;
-			
-			                if (valueIsCorrect) {
-			                    result = null;
-			                } else {
-			                    result = {
-			                        "usr.DGValidator": {
-			                            message: config.message
-			                        }
-			                    };
-			                }
-			
-			                return result;
-			            };
-			        },
-			        params: [
-			            {
-			                name: "minValue"
-			            },
-			            {
-			                name: "message"
-			            }
-			        ],
-			        async: false
-			    },
+				validator: function (config) {
+					return function (control) {
+						let value = control.value;
+						let minValue = config.minValue;
+						let valueIsCorrect = value >= minValue;
+						var result;
+
+						if (valueIsCorrect) {
+							result = null;
+						} else {
+							result = {
+								"usr.DGValidator": {
+									message: config.message
+								}
+							};
+						}
+
+						return result;
+					};
+				},
+				params: [
+					{
+						name: "minValue"
+					},
+					{
+						name: "message"
+					}
+				],
+				async: false
+			},
 			"usr.MaxValueValidator": {
-		        validator: function(config) {
-		            return function(control) {
-		                let value = Number(control.value);
+				validator: function (config) {
+					return function (control) {
+						let value = Number(control.value);
 						let maxValue = config.maxValue;
 						let valueIsCorrect = value > maxValue;
-			                var result = null;
-			                if(valueIsCorrect) {
-			                    result = {
-			                        "usr.MaxValueValidator": {
-			                            message: config.message
-			                        }
-			                    };
-			                }
-			                return result; 
-		            };
-		        },
-		
-		        params: [
-		            {
-		                name: "maxValue"
-		            },
-		            {
-		                name: "message"
-		            }
-		        ],
-		
-		        async: false
-		    }
+						var result = null;
+						if (valueIsCorrect) {
+							result = {
+								"usr.MaxValueValidator": {
+									message: config.message
+								}
+							};
+						}
+						return result;
+					};
+				},
+
+				params: [
+					{
+						name: "maxValue"
+					},
+					{
+						name: "message"
+					}
+				],
+
+				async: false
+			},
+			"usr.RangeValidator": {
+				validator: function (config) {
+					return function (control) {
+						const controlValue = Number(control.value); //form value
+						const value = Number(config.value); //limit
+						const operator = config.operator;
+
+						let isValid = true;
+
+						switch (operator) {
+							case ">":
+								isValid = controlValue > value;
+								break;
+
+							case ">=":
+								isValid = controlValue >= value;
+								break;
+
+							case "<":
+								isValid = controlValue < value;
+								break;
+
+							case "<=":
+								isValid = controlValue <= value;
+								break;
+
+							case "==":
+								isValid = controlValue === value;
+								break;
+
+							case "!=":
+								isValid = controlValue !== value;
+								break;
+
+							default:
+								isValid = true;
+						}
+
+						if (isValid) {
+							return null;
+						}
+
+						return {
+							"usr.RangeValidator": {
+								message: config.message
+							}
+						};
+					};
+				},
+
+				params: [
+					{
+						name: "operator"
+					},
+					{
+						name: "value"
+					},
+					{
+						name: "message"
+					}
+				],
+
+				async: false
+			}
 
 		}/**SCHEMA_VALIDATORS*/
 	};

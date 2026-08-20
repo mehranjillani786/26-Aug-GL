@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "a142a041-e180-433e-aad7-69f660fcab2f",
+    "Name": "UsrYachtRentalsNewYacht",
+    "ModifiedOnUtc": "\/Date(1787166027000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "New yacht rentals",
+    "DependsOn": []
+  }
+}

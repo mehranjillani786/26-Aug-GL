@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "1843d1e3-a4cb-4314-affb-cb0d4a08d0b0",
+    "Name": "UsrCallDNB",
+    "ModifiedOnUtc": "\/Date(1787224398000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "call dnb",
+    "DependsOn": []
+  }
+}

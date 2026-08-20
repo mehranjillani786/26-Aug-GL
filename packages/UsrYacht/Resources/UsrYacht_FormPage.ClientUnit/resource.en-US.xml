@@ -15,6 +15,7 @@
 			<Item Name="LocalizableStrings.GridDetailSearchFilter_bf21fu4_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.GridDetailSettingsBtn_f4eo7xl_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.LengthCannotBeGreater.Value" Value="Length must be less than 5000." />
+			<Item Name="LocalizableStrings.MenuItem_YachtService_caption.Value" Value="Call yacht service" />
 			<Item Name="LocalizableStrings.MenuItem_mx8ejdc_caption.Value" Value="Yacht avg price" />
 			<Item Name="LocalizableStrings.MultiSelect_Categories_label.Value" Value="Categories" />
 			<Item Name="LocalizableStrings.PriceCannotBeGreater.Value" Value="Price per day USD must be less than 100000." />

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="DNB" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Caption" Value="lookupInfoByName" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Request.Parameters.UsrCCode.Caption" Value="CountryCode" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Request.Parameters.UsrPName.Caption" Value="PrimaryName" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Response.Parameters.UsrCompanies.Caption" Value="Companies" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Response.Parameters.UsrCompanies.ItemProperties.UsrCAddress.Caption" Value="Address" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Response.Parameters.UsrCompanies.ItemProperties.UsrCCName.Caption" Value="CompanyName" />
+			<Item Name="ServiceMethods.UsrlookupInfoByName.Response.Parameters.UsrCompanies.ItemProperties.UsrCRNumber.Caption" Value="RegistrationNumber" />
+		</Items>
+	</Group>
+</Resources>

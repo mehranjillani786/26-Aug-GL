@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "d4313556-87c3-4201-a2df-c2e60ab173c8",
+    "Name": "UsrAddCountFromDNB",
+    "ModifiedOnUtc": "\/Date(1787224214000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Add an account from DNB",
+    "DependsOn": []
+  }
+}
