@@ -8,6 +8,7 @@
       "Name": "PageWithTabsFreedomTemplate"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Yachts form page"
+    "Caption": "Yachts form page",
+    "DependsOn": []
   }
 }

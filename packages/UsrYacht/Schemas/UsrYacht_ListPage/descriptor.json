@@ -8,6 +8,7 @@
       "Name": "ListPageV3Template"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Yachts list page"
+    "Caption": "Yachts list page",
+    "DependsOn": []
   }
 }

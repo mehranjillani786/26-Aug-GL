@@ -8,6 +8,7 @@
       "Name": "BaseMiniPageTemplate"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Yacht rental mini"
+    "Caption": "Yacht rental mini",
+    "DependsOn": []
   }
 }

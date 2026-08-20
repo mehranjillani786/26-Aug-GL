@@ -2,12 +2,13 @@
   "Descriptor": {
     "UId": "848bafd5-e652-4d63-ba7b-f6a5265984d1",
     "Name": "UsrDNBUserInput",
-    "ModifiedOnUtc": "\/Date(1787222545000)\/",
+    "ModifiedOnUtc": "\/Date(1787222546000)\/",
     "Parent": {
       "UId": "ecdcc8ff-272c-4957-9381-7d74ce17e140",
       "Name": "BaseMiniPageTemplate"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "User input for DNB"
+    "Caption": "User input for DNB",
+    "DependsOn": []
   }
 }
