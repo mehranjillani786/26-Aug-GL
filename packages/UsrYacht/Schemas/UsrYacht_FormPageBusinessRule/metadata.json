@@ -66,7 +66,8 @@
                 "BRT2": 2
               }
             ],
-            "BR3": "BusinessRule_0089dea"
+            "BR3": "BusinessRule_0089dea",
+            "BR4": false
           },
           {
             "JI0": "Terrasoft.Core.BusinessRules.BusinessRule",
