@@ -237,7 +237,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 					"placeholder": "",
 					"labelPosition": "auto",
 					"tooltip": "",
-					"visible": false
+					"visible": true
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
